@@ -22,13 +22,12 @@ pipeline {
         }
         stage('Test'){
             steps ('Check file') {
+                
                 sh '''
                 cd build
                 [ -f index.html ] && echo "Файл найден" || echo "Файл не найден"
                 '''
-            }
-            steps('Run test'){
-                sh '''
+                 sh '''
                 npm test -- --watchAll=false
                 '''
             }
