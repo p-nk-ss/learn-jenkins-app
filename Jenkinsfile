@@ -22,9 +22,9 @@ pipeline {
         }
         stage('Test'){
             steps ('Check file') {
-                '''
-                sh cd build
-                sh [ -f index.html ] && echo "Файл найден" || echo "Файл не найден"
+                sh '''
+                cd build
+                [ -f index.html ] && echo "Файл найден" || echo "Файл не найден"
                 '''
             }
            
