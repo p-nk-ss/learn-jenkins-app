@@ -27,6 +27,11 @@ pipeline {
                 [ -f index.html ] && echo "Файл найден" || echo "Файл не найден"
                 '''
             }
+            steps('Run test'){
+                sh '''
+                npm test -- --watchAll=false
+                '''
+            }
            
         }
     }
