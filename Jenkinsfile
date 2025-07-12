@@ -1,10 +1,5 @@
 pipeline {
-    // agent {
-    //         docker {
-    //             image 'node:18-alpine'
-
-    //         }
-    //         }
+    
     agent any
 
     // stages {
@@ -44,7 +39,7 @@ pipeline {
            
         }
         
-    }
+    
     post {
             always{
                 junit 'test-results/junit.xml'
